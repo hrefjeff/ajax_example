@@ -1,0 +1,42 @@
+<html>
+
+   <head>
+      <title>The jQuery ajax Example</title>
+   </head>
+   
+   <body>
+   
+      <p>Enter your name and click on the button:</p>
+      <input type = "input" id = "name" size = "40" /><br />
+      
+      <div id = "stage" style = "background-color:red;">
+         STAGE
+      </div>
+      
+      <input type = "button" id = "driver" value = "Show Result" />
+      
+   </body>
+   
+</html>
+
+<script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      
+<script type = "text/javascript" language = "javascript">
+   $(document).ready(function() {
+      $("#driver").click(function(e){
+         e.preventDefault();
+         $.ajax({
+            method: "GET",
+            url: "/jquery/result.php",
+            data: {
+               func: 'say_hello',
+               name: $("#name").val()
+            },
+            dataType: 'json',
+            success: function(json_response){
+               $('#stage').html(json_response.message);
+            }
+         })
+      });
+   });
+</script>
