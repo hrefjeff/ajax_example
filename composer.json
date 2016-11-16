@@ -1,0 +1,14 @@
+{
+    "name": "jeffreyallen/jquery",
+    "description": "First jquery project with lumen",
+    "type": "project",
+    "require": {
+        "laravel/lumen": "^5.3"
+    },
+    "authors": [
+        {
+            "name": "Jeffrey Allen",
+            "email": "jeffreyallen92@gmail.com"
+        }
+    ]
+}

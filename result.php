@@ -5,13 +5,12 @@ $request_method = $_SERVER['REQUEST_METHOD'];
 switch($request_method){
 
     case 'GET':
-        if (array_key_exists('say_hello', $_GET))
+        if ($_GET['func'] == 'say_hello')
         {
         
             say_hello($_GET['name']);
         
         }
-        
         break;
 
     case 'GET':
